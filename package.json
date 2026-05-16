@@ -4,8 +4,28 @@
   "description": "Lift browser HAR traces into WPTP IR v0",
   "type": "module",
   "license": "MIT",
-  "repository": { "type": "git", "url": "https://github.com/theorem6/wptp-adapter-browser.git" },
-  "scripts": { "test": "vitest run", "typecheck": "tsc --noEmit" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theorem6/wptp-adapter-browser.git"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@wptp/ir": "file:../wptp-ir"
+  },
   "devDependencies": {
     "@types/node": "^20.12.0",
     "tsx": "^4.22.0",

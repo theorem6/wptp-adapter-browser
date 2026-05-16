@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "0.1.0",
+  "meta": { "sourceApp": "mini-har", "importedFrom": "har@1.2" },
+  "roots": ["har-0", "har-1", "har-2"],
+  "nodes": [
+    {
+      "id": "har-0",
+      "layer": "request",
+      "op": "route",
+      "valueType": { "kind": "void" },
+      "effects": [{ "kind": "http.fetch", "host": "example.com" }],
+      "operandIds": [],
+      "attrs": { "path": "/api/pets", "method": "GET", "url": "https://example.com/api/pets" },
+      "provenance": [{ "source": "browser-trace", "reason": "GET /api/pets", "locator": { "kind": "har", "url": "https://example.com/api/pets", "method": "GET" } }],
+      "browser": { "url": "https://example.com/api/pets", "method": "GET" }
+    },
+    {
+      "id": "har-1",
+      "layer": "request",
+      "op": "route",
+      "valueType": { "kind": "void" },
+      "effects": [{ "kind": "http.fetch", "host": "example.com" }],
+      "operandIds": [],
+      "attrs": { "path": "/api/pets", "method": "POST", "url": "https://example.com/api/pets" },
+      "provenance": [{ "source": "browser-trace", "reason": "POST /api/pets", "locator": { "kind": "har", "url": "https://example.com/api/pets", "method": "POST" } }],
+      "browser": { "url": "https://example.com/api/pets", "method": "POST" }
+    },
+    {
+      "id": "har-2",
+      "layer": "request",
+      "op": "route",
+      "valueType": { "kind": "void" },
+      "effects": [{ "kind": "http.fetch", "host": "example.com" }],
+      "operandIds": [],
+      "attrs": { "path": "/api/pets/42", "method": "GET", "url": "https://example.com/api/pets/42" },
+      "provenance": [{ "source": "browser-trace", "reason": "GET /api/pets/42", "locator": { "kind": "har", "url": "https://example.com/api/pets/42", "method": "GET" } }],
+      "browser": { "url": "https://example.com/api/pets/42", "method": "GET" }
+    }
+  ],
+  "losses": []
+}
